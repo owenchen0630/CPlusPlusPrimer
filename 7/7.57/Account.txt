@@ -15,5 +15,5 @@ void Account::rate(double newRate) {
 }
 
 double Account::initRate() {
-	return 0;
+	return 0.0;
 }
