@@ -19,6 +19,8 @@ class HasPtr {
 public:
 	HasPtr(const string &s = string()) :ps(new string(s)), i(0) {}
 	HasPtr(const HasPtr&);
+	HasPtr& operator=(const HasPtr&);
+	~HasPtr() { delete ps; }
 	void print() { cout << *ps << endl; }
 private:
 	string * ps;
@@ -30,12 +32,20 @@ HasPtr::HasPtr(const HasPtr &hp) {
 	i = hp.i;
 }
 
+HasPtr& HasPtr::operator=(const HasPtr& hp) {
+	ps = new string(*hp.ps);
+	i = hp.i;
+	return *this;
+}
+
 int main() {
 	HasPtr hp("aaaaa");
 	HasPtr hp2(hp);
+	HasPtr hp3 = hp2;
 	hp2 = HasPtr("bbbb");
 	hp2.print();
 	hp.print();
+	hp3.print();
 	system("pause");
 	return 0;
 }
