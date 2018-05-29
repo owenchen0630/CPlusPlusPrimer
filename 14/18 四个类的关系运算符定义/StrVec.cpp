@@ -103,3 +103,29 @@ bool operator==(const StrVec &lhs, const StrVec &rhs) {
 bool operator!=(const StrVec &lhs, const StrVec &rhs) {
 	return !(lhs == rhs);
 }
+
+bool operator<(const StrVec &lhs, const StrVec &rhs) {
+	for (auto lb = lhs.begin(), rb = rhs.begin();lb != lhs.end() && rb != rhs.end();lb++, rb++) {
+		if (*lb < *rb) return true;
+		if (*lb > *rb) return false;
+	}
+	if (lhs.size() < rhs.size()) return true;
+	else return false;
+}
+
+bool operator<=(const StrVec &lhs, const StrVec &rhs) {
+	for (auto lb = lhs.begin(), rb = rhs.begin();lb != lhs.end() && rb != rhs.end();lb++, rb++) {
+		if (*lb < *rb) return true;
+		if (*lb > *rb) return false;
+	}
+	if (lhs.size() <= rhs.size()) return true;
+	else return false;
+}
+
+bool operator>(const StrVec &lhs, const StrVec &rhs) {
+	return !(lhs <= rhs);
+}
+
+bool operator>=(const StrVec &lhs, const StrVec &rhs) {
+	return !(lhs < rhs);
+}
