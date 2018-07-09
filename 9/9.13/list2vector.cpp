@@ -12,8 +12,8 @@ using std::endl;
 int main() {
 	vector<int> orz1{ 1,2,3,4,5,6,7,8,9 };
 	list<int> orz2{ 1,2,3,4,5,6,7,8,9 };
-	vector<double> trg1(orz1.begin(), orz1.end());
-	vector<double> trg2(orz2.begin(), orz2.end());
+	vector<double> trg1(orz1.cbegin(), orz1.cend());
+	vector<double> trg2(orz2.cbegin(), orz2.cend());
 	for (int i = 0;i < trg1.size();i++) {
 		cout << trg1[i] << " ";
 	}
