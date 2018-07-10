@@ -37,6 +37,22 @@ void findAndReplace_2(string &s, string &oldVal, string &newVal) {
 		else i++;
 	}
 }
++//use string iterator
++void findAndReplace_3(string &s, string &oldVal, string &newVal) {
++	int i = 0;
++	while (sb < s.end() - oldVal.size() + 1) {
++		string s_temp(sb, sb + oldVal.size());
++		if (s_temp == oldVal) {
++		    s.replace(i, oldVal.size(), newVal);
++		    sb = s.begin() + i + newVal.size();
++		    i += newVal.size();
++		}
++		else {
++		    sb++;
++		    i++;
++		}
++	    }
++}
 
 int main() {
 	string s = "ABCDEFGHIJKBCBC";
