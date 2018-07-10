@@ -18,7 +18,7 @@ int main() {
 		cout << trg1[i] << " ";
 	}
 	cout << endl;
-	for (int i = 0;i < trg1.size();i++) {
+	for (int i = 0;i < trg2.size();i++) {
 		cout << trg2[i] << " ";
 	}
 	cout << endl;
